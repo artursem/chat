@@ -4,10 +4,12 @@ import './App.css';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
-import 'firebase/analytics';
+// import 'firebase/analytics';
 
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
+
+import SendIcon from './components/SendIcon';
 
 firebase.initializeApp({
 	apiKey: 'AIzaSyCDTzPHtW5uKEEZy_2-5oCwv4GjI3Ldoj0',
@@ -20,7 +22,6 @@ firebase.initializeApp({
 
 const auth = firebase.auth();
 const firestore = firebase.firestore();
-const analytics = firebase.analytics();
 
 function App() {
 	const [user] = useAuthState(auth);
@@ -88,7 +89,7 @@ function ChatRoom() {
 			photoURL,
 		});
 		setFormValue('');
-		bottom.current.scrollINtoView({ behavior: 'smooth' });
+		bottom.current.scrollIntoView({ behavior: 'smooth' });
 	};
 
 	return (
@@ -102,7 +103,10 @@ function ChatRoom() {
 			</main>
 			<form onSubmit={sendMessage}>
 				<input value={formValue} onChange={inputChangeHandler} />
-				<button type='submit'>🕊️</button>
+				<button type='submit'>
+					<SendIcon />
+					{/* 🕊️ */}
+				</button>
 			</form>
 		</>
 	);

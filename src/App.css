@@ -1,5 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto:wght@400;700&family=Spartan:wght@500;700&family=Zen+Kaku+Gothic+Antique:wght@500;700&display=swap');
+
+:root {
+	--blackGreen: hsl(150, 30%, 5%);
+	--darkGreen: hsl(150, 30%, 15%);
+	--desatGreen: hsl(150, 10%, 15%);
+	--lightGreen: hsl(150, 30%, 40%);
+	--brightgreen: hsl(150, 30%, 50%);
+}
+
 body {
 	background-color: #282c34;
+	overflow-y: hidden;
+	font-family: 'Lato', sans-serif;
 }
 
 .App {
@@ -9,7 +21,7 @@ body {
 }
 
 .App header {
-	background-color: #181717;
+	background-color: var(--blackGreen);
 	height: 10vh;
 	min-height: 50px;
 	color: white;
@@ -30,7 +42,7 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	min-height: 100vh;
-	background-color: rgb(40, 37, 53);
+	background-color: var(--darkGreen);
 }
 
 main {
@@ -47,18 +59,18 @@ main::-webkit-scrollbar {
 }
 
 main::-webkit-scrollbar-track {
-	background: #1e1e24;
+	background: var(--blackGreen);
 }
 
 main::-webkit-scrollbar-thumb {
-	background: #6649b8;
+	background: var(--lightGreen);
 }
 
 form {
 	height: 10vh;
 	position: fixed;
 	bottom: 0;
-	background-color: rgb(24, 23, 23);
+	background-color: var(--desatGreen);
 	width: 100%;
 	max-width: 728px;
 	display: flex;
@@ -67,14 +79,16 @@ form {
 
 form button {
 	width: 20%;
-	background-color: rgb(56, 56, 143);
+	background-color: var(--lightGreen);
+	cursor: pointer;
 }
 
 input {
+	font-family: inherit;
 	line-height: 1.5;
 	width: 100%;
 	font-size: 1.5rem;
-	background: rgb(58, 58, 58);
+	background: var(--desatGreen);
 	color: white;
 	outline: none;
 	border: none;
@@ -99,10 +113,11 @@ button:disabled {
 }
 
 .sign-in {
-	color: #282c34;
+	color: var(--darkGreen);
 	background: white;
 	max-width: 400px;
 	margin: 0 auto;
+	cursor: pointer;
 }
 
 ul,
@@ -134,6 +149,7 @@ p {
 .sent p {
 	color: white;
 	background: #0b93f6;
+	background: var(--brightgreen);
 	align-self: flex-end;
 }
 .received p {
